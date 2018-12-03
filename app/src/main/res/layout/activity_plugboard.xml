@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Plugboard">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="265dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/bttQ"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/Q"
+        tools:ignore="ButtonStyle" /> <!--Q-->
+    <Button
+        android:id="@+id/bttW"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/W"
+        tools:ignore="ButtonStyle" /> <!--W-->
+    <Button
+        android:id="@+id/bttE"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/E"
+        tools:ignore="ButtonStyle" /> <!--E-->
+    <Button
+        android:id="@+id/bttR"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/R"
+        tools:ignore="ButtonStyle" /> <!--R-->
+    <Button
+        android:id="@+id/bttT"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/T"
+        tools:ignore="ButtonStyle" /> <!--T-->
+    <Button
+        android:id="@+id/bttZ"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/Z"
+        tools:ignore="ButtonStyle" /> <!--Z-->
+    <Button
+        android:id="@+id/bttU"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/U"
+        tools:ignore="ButtonStyle" /> <!--U-->
+    <Button
+        android:id="@+id/bttI"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/I"
+        tools:ignore="ButtonStyle" /> <!--I-->
+    <Button
+        android:id="@+id/bttO"
+        android:layout_width="@dimen/std"
+        android:layout_height="@dimen/std"
+        android:background="@drawable/round_shape"
+        android:onClick="openPlugssetting"
+        android:text="@string/O"
+        tools:ignore="ButtonStyle" /> <!--O-->
+</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="299dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/bttA"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/A"
+            tools:ignore="ButtonStyle" /> <!--A-->
+        <Button
+            android:id="@+id/bttS"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/S"
+            tools:ignore="ButtonStyle" /> <!--S-->
+        <Button
+            android:id="@+id/bttD"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/D"
+            tools:ignore="ButtonStyle" /> <!--D-->
+        <Button
+            android:id="@+id/bttF"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/F"
+            tools:ignore="ButtonStyle" /> <!--F-->
+        <Button
+            android:id="@+id/bttG"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/G"
+            tools:ignore="ButtonStyle" /> <!--G-->
+        <Button
+            android:id="@+id/bttH"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/H"
+            tools:ignore="ButtonStyle" /> <!--H-->
+        <Button
+            android:id="@+id/bttJ"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/J"
+            tools:ignore="ButtonStyle" /> <!--J-->
+        <Button
+            android:id="@+id/bttK"
+            android:layout_width="@dimen/std"
+            android:layout_height="@dimen/std"
+            android:background="@drawable/round_shape"
+            android:onClick="openPlugssetting"
+            android:text="@string/K"
+            tools:ignore="ButtonStyle" /> <!--K-->
+
+    </LinearLayout>
+    
+    <LinearLayout
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:layout_alignParentStart="true"
+     android:layout_alignParentLeft="true"
+     android:layout_alignParentTop="true"
+     android:layout_marginStart="0dp"
+     android:layout_marginLeft="0dp"
+     android:layout_marginTop="335dp"
+     android:gravity="center_horizontal"
+     android:orientation="horizontal">
+     <Button
+      android:id="@+id/bttP"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/P"
+    tools:ignore="ButtonStyle" /> <!--P-->
+     <Button
+     android:id="@+id/bttY"
+     android:layout_width="@dimen/std"
+     android:layout_height="@dimen/std"
+     android:background="@drawable/round_shape"
+     android:onClick="openPlugssetting"
+     android:text="@string/Y"
+     tools:ignore="ButtonStyle" /> <!--Y-->
+     <Button
+      android:id="@+id/bttX"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/X"
+    tools:ignore="ButtonStyle" /> <!--X-->
+     <Button
+      android:id="@+id/bttC"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/C"
+      tools:ignore="ButtonStyle" /> <!--C-->
+     <Button
+      android:id="@+id/bttV"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/V"
+      tools:ignore="ButtonStyle" /> <!--V-->
+     <Button
+      android:id="@+id/bttB"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/B"
+      tools:ignore="ButtonStyle" /> <!--B-->
+     <Button
+      android:id="@+id/bttN"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/N"
+      tools:ignore="ButtonStyle" /> <!--N-->
+     <Button
+      android:id="@+id/bttM"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/M"
+      tools:ignore="ButtonStyle" /> <!--M-->
+     <Button
+      android:id="@+id/bttL"
+      android:layout_width="@dimen/std"
+      android:layout_height="@dimen/std"
+      android:background="@drawable/round_shape"
+      android:onClick="openPlugssetting"
+      android:text="@string/L"
+      tools:ignore="ButtonStyle" /> <!--L-->
+</LinearLayout>
+   <!--salvare settaggio spine !-->
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:onClick="save"
+        android:text="@string/save" />
+</RelativeLayout>

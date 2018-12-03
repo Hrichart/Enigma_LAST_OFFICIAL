@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/macchina_enigma_1"
+    tools:context=".Crypt_decrypt">
+
+    <Switch
+        android:id="@+id/cr_decr_sw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="13dp"
+        android:showText="true"
+        android:textOff="@string/text_off"
+        android:textOn="@string/text_on" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginBottom="22dp"
+        android:onClick="reset"
+        android:text="@string/reset1" /> <!--bottene reset-->
+    <Button
+        android:id="@+id/rotors_btt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="43dp"
+        android:onClick="openRotors"
+        android:text="@string/rotors" /> <!--bottone rotori-->
+    <Button
+        android:id="@+id/rotors_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="271dp"
+        android:layout_marginLeft="271dp"
+        android:layout_marginTop="44dp"
+        android:onClick="openHome"
+        android:text="@string/home" /> <!--bottone home-->
+    <Button
+        android:id="@+id/plug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginLeft="45dp"
+        android:layout_marginBottom="24dp"
+        android:layout_weight="1"
+        android:onClick="openPlugboard"
+        android:text="@string/plug" /> <!--bottone spine-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="372dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/bttQ"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="8dp" /> <!--Q-->
+            <Button
+                android:id="@+id/bttW"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="51dp"
+                android:layout_marginLeft="51dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle" /> <!--W-->
+            <Button
+                android:id="@+id/bttE"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="95dp"
+                android:layout_marginLeft="95dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle" /> <!--E-->
+            <Button
+                android:id="@+id/bttR"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="137dp"
+                android:layout_marginLeft="137dp"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle" /> <!--R-->
+            <Button
+                android:id="@+id/bttT"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@+id/bttZ"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle"
+                android:layout_toLeftOf="@+id/bttZ"
+                android:layout_marginRight="8dp" /> <!--T-->
+            <Button
+                android:id="@+id/bttZ"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="124dp"
+                android:layout_marginRight="124dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle" /> <!--Z-->
+            <Button
+                android:id="@+id/bttU"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="81dp"
+                android:layout_marginRight="81dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle" /> <!--U-->
+            <Button
+                android:id="@+id/bttI"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/Q"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle"
+                android:layout_toLeftOf="@+id/Q" /> <!--I-->
+            <Button
+                android:id="@+id/Q"
+                android:layout_width="@dimen/std"
+                android:layout_height="@dimen/std"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/round_shape"
+                android:onClick="openEnigma"
+                tools:ignore="ButtonStyle"
+                android:layout_alignParentRight="true" /> <!--O-->
+        </RelativeLayout>
+
+    </LinearLayout> <!--lettere Q,W,E,R,T,Z,U,I-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="405dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+ <RelativeLayout
+     android:layout_width="match_parent"
+     android:layout_height="match_parent">
+
+     <Button
+         android:id="@+id/bttA"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginStart="23dp"
+         android:layout_marginLeft="23dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--A-->
+     <Button
+         android:id="@+id/bttS"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginStart="66dp"
+         android:layout_marginLeft="66dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--S-->
+     <Button
+         android:id="@+id/bttD"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginStart="108dp"
+         android:layout_marginLeft="108dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--D-->
+     <Button
+         android:id="@+id/bttF"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentStart="true"
+         android:layout_alignParentLeft="true"
+         android:layout_alignParentTop="true"
+         android:layout_marginStart="150dp"
+         android:layout_marginLeft="150dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--F-->
+     <Button
+         android:id="@+id/bttG"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginEnd="157dp"
+         android:layout_marginRight="157dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--G-->
+     <Button
+         android:id="@+id/bttH"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginEnd="112dp"
+         android:layout_marginRight="112dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--H-->
+     <Button
+         android:id="@+id/bttJ"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginEnd="68dp"
+         android:layout_marginRight="68dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--J-->
+     <Button
+         android:id="@+id/bttK"
+         android:layout_width="@dimen/std"
+         android:layout_height="@dimen/std"
+         android:layout_alignParentTop="true"
+         android:layout_alignParentEnd="true"
+         android:layout_alignParentRight="true"
+         android:layout_marginEnd="25dp"
+         android:layout_marginRight="25dp"
+         android:background="@drawable/round_shape"
+         android:onClick="openEnigma"
+         tools:ignore="ButtonStyle" /> <!--K-->
+ </RelativeLayout>
+    </LinearLayout> <!--lettere A,S,D,F,G,H,J,K-->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="440dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+     <RelativeLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+         <Button
+             android:id="@+id/bttP"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentTop="true"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle"
+             android:layout_alignParentLeft="true" /> <!--P-->
+         <Button
+             android:id="@+id/bttY"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentTop="true"
+             android:layout_marginStart="5dp"
+             android:layout_marginTop="0dp"
+             android:layout_toEndOf="@+id/bttP"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle"
+             android:layout_marginLeft="5dp"
+             android:layout_toRightOf="@+id/bttP" /> <!--Y-->
+         <Button
+             android:id="@+id/bttX"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentTop="true"
+             android:layout_marginStart="81dp"
+             android:layout_marginLeft="81dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--X-->
+         <Button
+             android:id="@+id/bttC"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentTop="true"
+             android:layout_marginStart="124dp"
+             android:layout_marginLeft="124dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--C-->
+         <Button
+             android:id="@+id/bttV"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentStart="true"
+             android:layout_alignParentLeft="true"
+             android:layout_alignParentTop="true"
+             android:layout_marginStart="166dp"
+             android:layout_marginLeft="166dp"
+             android:layout_marginTop="0dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--V-->
+         <Button
+             android:id="@+id/bttB"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentRight="true"
+             android:layout_marginEnd="141dp"
+             android:layout_marginRight="141dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--B-->
+         <Button
+             android:id="@+id/bttN"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentRight="true"
+             android:layout_marginEnd="99dp"
+             android:layout_marginRight="99dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--N-->
+         <Button
+             android:id="@+id/bttM"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentRight="true"
+             android:layout_marginEnd="57dp"
+             android:layout_marginRight="57dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--M-->
+         <Button
+             android:id="@+id/bttL"
+             android:layout_width="@dimen/std"
+             android:layout_height="@dimen/std"
+             android:layout_alignParentTop="true"
+             android:layout_alignParentEnd="true"
+             android:layout_alignParentRight="true"
+             android:layout_marginEnd="15dp"
+             android:layout_marginRight="15dp"
+             android:background="@drawable/round_shape"
+             android:onClick="openEnigma"
+             tools:ignore="ButtonStyle" /> <!--L-->
+     </RelativeLayout>
+    </LinearLayout> <!--lettere da P,Y,X,C,V,B,N,M,L-->
+
+</RelativeLayout>

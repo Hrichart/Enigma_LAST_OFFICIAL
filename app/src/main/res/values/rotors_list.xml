@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="rotors_list">
+        <item>Rotor I</item>
+        <item>Rotor II</item>
+        <item>Rotor III</item>
+        <item>Rotor IV</item>
+        <item>Rotor V</item>
+        <!--<item>Rotor VI</item>
+        <item>Rotor VII</item>
+        <item>Rotor VIII</item>-->
+    </string-array>
+
+    <string-array name="reflector_list">
+        <item>Reflector A</item>
+        <item>Reflector B</item>
+        <item>Reflector C</item>
+    </string-array>
+
+    <string-array name="letters_list">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+        <item>F</item>
+        <item>G</item>
+        <item>H</item>
+        <item>I</item>
+        <item>J</item>
+        <item>K</item>
+        <item>L</item>
+        <item>M</item>
+        <item>N</item>
+        <item>O</item>
+        <item>P</item>
+        <item>Q</item>
+        <item>R</item>
+        <item>S</item>
+        <item>T</item>
+        <item>U</item>
+        <item>V</item>
+        <item>W</item>
+        <item>X</item>
+        <item>Y</item>
+        <item>Z</item>
+    </string-array>
+
+
+</resources>

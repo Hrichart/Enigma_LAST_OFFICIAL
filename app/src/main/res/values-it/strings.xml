@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Enigma</string>
+    <string name="welcome">Benvenuto nel simulatore di Enigma</string>
+    <string name="crypt">Inizia a cifrare o decifrare</string>
+    <string name="text_off">Cifra</string>
+    <string name="text_on">Decifra</string>
+    <string name="rotors">Rotori</string>
+    <string name="rotors_choose">Scegli qui i rotori</string>
+    <string name="rotors_choose1">Scegli il primo rotore (destra)</string>
+    <string name="rotors_choose2">Scegli il secondo rotore (centro)</string>
+    <string name="rotors_choose3">scegli il terzo rotore (sinistra)</string>
+    <string name="rotors_reflector">Scegli il riflettore</string>
+    <string name="save">Salva le modifiche</string>
+    <string name="save_toast">Modifiche salvate</string>
+    <string name="reset1">Resetta i rotori</string>
+    <string name="reset_toast">Reset dei rotori</string>
+    <string name="start_selection">Seleziona le prime lettere dei rotori</string>
+    <string name="first_letter">I rotore</string>
+    <string name="second_letter">II rotore</string>
+    <string name="third_letter">III rotore</string>
+    <string name="home">Home</string>
+    <string name="plug">Spine</string>
+    <string name="rotor_letter">Seleziona la posizione del rotore</string>
+    <string name="reflector_choose">Riflettore</string>
+    <string name="max_reached">Hai raggiunto il numero massimo di caratteri</string>
+    <string name="crypted_text">Il seguente è il testo cifrato</string>
+    <string name="original_text">Il seguente è il testo digitato</string>
+
+    <string name="A">A</string>
+    <string name="B">B</string>
+    <string name="C">C</string>
+    <string name="D">D</string>
+    <string name="E">E</string>
+    <string name="F">F</string>
+    <string name="G">G</string>
+    <string name="H">H</string>
+    <string name="I">I</string>
+    <string name="J">J</string>
+    <string name="K">K</string>
+    <string name="L">L</string>
+    <string name="M">M</string>
+    <string name="N">N</string>
+    <string name="O">O</string>
+    <string name="P">P</string>
+    <string name="Q">Q</string>
+    <string name="R">R</string>
+    <string name="S">S</string>
+    <string name="T">T</string>
+    <string name="U">U</string>
+    <string name="V">V</string>
+    <string name="W">W</string>
+    <string name="X">X</string>
+    <string name="Y">Y</string>
+    <string name="Z">Z</string>
+</resources>
