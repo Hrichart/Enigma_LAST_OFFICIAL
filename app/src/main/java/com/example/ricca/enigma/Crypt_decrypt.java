@@ -11,7 +11,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.CompoundButton;
 
-
 public class Crypt_decrypt extends AppCompatActivity {
 
     public static boolean first_access=false;
@@ -30,11 +29,13 @@ public class Crypt_decrypt extends AppCompatActivity {
     private static int offset3;
     private static int offset4;
 
-    TextView original_text2=findViewById(R.id.original_text_2);
-    TextView crypted_text1=findViewById(R.id.crypted_text_1);
-    TextView crypted_text2=findViewById(R.id.crypted_text_2);
-    TextView decrypted_text1=findViewById(R.id.decrypted_text_1);
-    TextView decrypted_text2=findViewById(R.id.decrypted_text_2);
+    public static String CRYPTPREFERENCES="cryptprefs";
+    public static String original_text2="original_text_key";
+    public static String crypted_text1="crypted_text1_key";
+    public static String crypted_text2="crypted_text2_key";
+    public static String decrypted_text1="decrypted_text1_key";
+    public static String decrypted_text2="decrypted_text2_key";
+    public static SharedPreferences crypt_preferences;
 
     byte i=0;
 
@@ -47,48 +48,44 @@ public class Crypt_decrypt extends AppCompatActivity {
         offset2=selected_letter_2;
         offset3=selected_letter_3;
         offset4=selected_letter_4;
-        cr_decr_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonvView, boolean isChecked) {
-                original_text2.setText(null);
-                crypted_text2.setText(null);
-                decrypted_text2.setText(null);
-                i=0;
-                if(isChecked){
-                    crypted_text1.setVisibility(View.VISIBLE);
-                    crypted_text2.setVisibility(View.VISIBLE);
-                    decrypted_text1.setVisibility(View.INVISIBLE);
-                    decrypted_text2.setVisibility(View.INVISIBLE);
-                }
-                else{
-                    crypted_text1.setVisibility(View.VISIBLE);
-                    crypted_text2.setVisibility(View.VISIBLE);
-                    decrypted_text1.setVisibility(View.INVISIBLE);
-                    decrypted_text2.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
     }
+
+
+
+
     //Per andare alla home
     public void openHome(View view){
-        original_text2.setText(null);
-        crypted_text2.setText(null);
-        decrypted_text2.setText(null);
+        crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=crypt_preferences.edit();
+        editor.putString("original_text_key","");
+        editor.putString("crypted_text2_key","");
+        editor.putString("decrypted_text2_key","");
+        editor.commit();
+        i=0;
         Intent intent=new Intent(this,MainActivity.class);
         startActivity(intent);
     }
     //Per selezionare i rotori
     public void openRotors(View view){
-        original_text2.setText(null);
-        crypted_text2.setText(null);
-        decrypted_text2.setText(null);
+        crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=crypt_preferences.edit();
+        editor.putString("original_text_key","");
+        editor.putString("crypted_text2_key","");
+        editor.putString("decrypted_text2_key","");
+        editor.commit();
+        i=0;
         Intent intent=new Intent(this,Rotors.class);
         startActivity(intent);
     }
     //Per selezionare le spine
     public void openPlugboard(View view){
-        original_text2.setText(null);
-        crypted_text2.setText(null);
-        decrypted_text2.setText(null);
+        crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor=crypt_preferences.edit();
+        editor.putString("original_text_key","");
+        editor.putString("crypted_text2_key","");
+        editor.putString("decrypted_text2_key","");
+        editor.commit();
+        i=0;
         Intent intent=new Intent(this,Plugboard.class);
         startActivity(intent);
     }
@@ -151,7 +148,7 @@ public class Crypt_decrypt extends AppCompatActivity {
     }
 
     public void Enigma_heart(int index) {
-        char result;
+        String result;
         int starting=index;
 
         offset1=offset1+1;      //Rotazione del rotore (che avviene virtualmente prima di premere il tasto)
@@ -213,38 +210,44 @@ public class Crypt_decrypt extends AppCompatActivity {
 
         if(cr_decr_switch.isChecked())
         {
+            crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor=crypt_preferences.edit();
             if(i<100){
-                result=letters[index-1];
+                result=String.valueOf(letters[index-1]);
                 i= (byte) (i+1);
-                original_text2.setText(String.format("%s%s",original_text2, String.valueOf(letters[starting-1])));
-                decrypted_text2.setText(String.format("%s%s", decrypted_text2, String.valueOf(result)));
+                editor.putString("original_text_key",String.format("%s%s",crypt_preferences.getString("original_text_key",""), String.valueOf(letters[starting-1])));
+                editor.putString("decrypted_text2_key",String.format("%s%s", crypt_preferences.getString("decrypted_text2_key",""), result));
             }
             else{
                 Toast toast=Toast.makeText(getApplicationContext(),R.string.max_reached,Toast.LENGTH_SHORT);
                 toast.show();
             }
+            editor.commit();
         }
         else
         {
-            if(i<125&&(i%4==0)){
-                result=' ';
+            crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor=crypt_preferences.edit();
+            if(i<100&&(i%4==0)&&i!=0){
+                result=String.valueOf(letters[index-1]);
                 i= (byte) (i+1);
-                crypted_text2.setText(String.format("%s%s", crypted_text2, String.valueOf(result)));
-                result=letters[index-1];
-                i= (byte) (i+1);
-                original_text2.setText(String.format("%s%s",original_text2, String.valueOf(letters[starting-1])));
-                crypted_text2.setText(String.format("%s%s", crypted_text2, String.valueOf(result)));
+                editor.putString("original_text_key",String.format("%s%s",crypt_preferences.getString("original_text_key",""), String.valueOf(letters[starting-1])));
+                editor.putString("crypted_text2_key",String.format("%s %s",crypt_preferences.getString("crypted_text2_key",""), result));
             }
-            else if(i>=125){
+            else if(i>=100){
                 Toast toast=Toast.makeText(getApplicationContext(),R.string.max_reached,Toast.LENGTH_SHORT);
                 toast.show();
             }
             else{
-                result=letters[index-1];
+                result=String.valueOf(letters[index-1]);
                 i= (byte) (i+1);
-                original_text2.setText(String.format("%s%s",original_text2, String.valueOf(letters[starting-1])));
-                crypted_text2.setText(String.format("%s%s", crypted_text2, String.valueOf(result)));
+                editor.putString("original_text_key",String.format("%s%s",crypt_preferences.getString("original_text_key",""), String.valueOf(letters[starting-1])));
+                editor.putString("crypted_text2_key",String.format("%s%s",crypt_preferences.getString("crypted_text2_key",""), result));
+
             }
+            editor.commit();
+            Toast toast=Toast.makeText(getApplicationContext(),crypt_preferences.getString("crypted_text2_key",""),Toast.LENGTH_SHORT);
+            toast.show();
         }
     }
     //Per resettare i rotori
@@ -259,7 +262,6 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor.putInt("letter_two_key",0);
         editor.putInt("letter_three_key",0);
         editor.putInt("letter_four_key",0);
-
         editor.commit();
         Rotors.spinner1.setSelection(Rotors.enigma_preferences.getInt("rotor_one_key",0));
         Rotors.spinner2.setSelection(Rotors.enigma_preferences.getInt("rotor_two_key",0));
@@ -270,7 +272,30 @@ public class Crypt_decrypt extends AppCompatActivity {
         Rotors.spinner7.setSelection(Rotors.enigma_preferences.getInt("letter_three_key",0));
         Rotors.spinner8.setSelection(Rotors.enigma_preferences.getInt("letter_four_key",0));
 
+        crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2=crypt_preferences.edit();
+        editor2.putString("original_text_key","");
+        editor2.putString("crypted_text2_key","");
+        editor2.putString("decrypted_text2_key","");
+        editor2.commit();
+        i=0;
         Toast toast=Toast.makeText(getApplicationContext(),R.string.reset_toast,Toast.LENGTH_SHORT);
         toast.show();
+    }
+
+    public void openTexts(View view){
+        SharedPreferences.Editor editor=crypt_preferences.edit();
+
+        if(cr_decr_switch.isChecked()){
+            editor.putInt("crypted_text1_key",4);
+            editor.putInt("decrypted_text1_key",0);
+        }
+        else{
+            editor.putInt("crypted_text1_key",0);
+            editor.putInt("decrypted_text1_key",4);
+        }
+        editor.commit();
+        Intent intent=new Intent(this,toCrypt.class);
+        startActivity(intent);
     }
 }

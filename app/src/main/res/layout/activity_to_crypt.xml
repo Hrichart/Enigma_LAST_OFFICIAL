@@ -37,7 +37,8 @@
         android:layout_marginTop="272dp"
         android:gravity="center_horizontal"
         android:text="@string/crypted_text"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/crypted_text_2"
@@ -48,7 +49,8 @@
         android:layout_marginStart="0dp"
         android:layout_marginTop="305dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/decrypted_text_1"
@@ -61,7 +63,7 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="273dp"
         android:gravity="center_horizontal"
-        android:text="@string/crypted_text"
+        android:text="@string/decrypted_text"
         android:visibility="invisible" />
 
     <TextView
@@ -75,5 +77,15 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="0dp"
         android:visibility="invisible"/>
+
+    <Button
+        android:id="@+id/back_to_crypt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="508dp"
+        android:text="@string/back"
+        android:onClick="openCrypt"/>
 
 </RelativeLayout>

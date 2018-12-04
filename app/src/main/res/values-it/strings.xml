@@ -25,7 +25,12 @@
     <string name="reflector_choose">Riflettore</string>
     <string name="max_reached">Hai raggiunto il numero massimo di caratteri</string>
     <string name="crypted_text">Il seguente è il testo cifrato</string>
+    <string name="decrypted_text">Il seguente è il testo decifrato</string>
     <string name="original_text">Il seguente è il testo digitato</string>
+    <string name="view_text_btt">Visualizza testi</string>
+    <string name="back">Indietro</string>
+
+
 
     <string name="A">A</string>
     <string name="B">B</string>

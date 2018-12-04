@@ -54,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
        editor.putInt("letter_three_key",0);
        editor.putInt("letter_four_key",0);
        editor.commit();
+       Crypt_decrypt.crypt_preferences=getSharedPreferences(Crypt_decrypt.CRYPTPREFERENCES,Context.MODE_PRIVATE);
+       SharedPreferences.Editor editor2=Crypt_decrypt.crypt_preferences.edit();
+       editor2.putString("original_text_key","");
+       editor2.putString("crypted_text2_key","");
+       editor2.putString("decrypted_text2_key","");
+       editor2.commit();
        Intent intent = new Intent(this, Crypt_decrypt.class);
        startActivity(intent);
    }
