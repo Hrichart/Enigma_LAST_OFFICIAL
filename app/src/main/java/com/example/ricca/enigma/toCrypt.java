@@ -1,5 +1,7 @@
 package com.example.ricca.enigma;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -38,5 +40,19 @@ public class toCrypt extends AppCompatActivity {
     {
         Intent intent=new Intent(this,Crypt_decrypt.class);
         startActivity(intent);
+    }
+    public void openCopy(View view){
+        Crypt_decrypt.crypt_preferences=getSharedPreferences(Crypt_decrypt.CRYPTPREFERENCES,Context.MODE_PRIVATE);
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        ClipData clip;
+        if(Crypt_decrypt.crypt_preferences.getInt("crypted_text1_key",0)==0)
+            clip = ClipData.newPlainText("Text",Crypt_decrypt.crypt_preferences.getString("crypted_text2_key",""));
+        else
+            clip = ClipData.newPlainText("Text",Crypt_decrypt.crypt_preferences.getString("decrypted_text2_key",""));
+
+        assert clipboard != null;
+        clipboard.setPrimaryClip(clip);
+        Toast toast=Toast.makeText(getApplicationContext(),R.string.copy,Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

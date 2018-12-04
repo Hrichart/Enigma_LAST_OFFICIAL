@@ -28,6 +28,7 @@
     <string name="original_text">The following is the typed text</string>
     <string name="view_text_btt">View texts</string>
     <string name="back">Back</string>
+    <string name="copy">Text copied!</string>
 
     <string name="A">A</string>
     <string name="B">B</string>
