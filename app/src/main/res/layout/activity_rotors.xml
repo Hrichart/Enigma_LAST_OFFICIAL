@@ -199,7 +199,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="save"
-            android:text="@string/save" />
+            android:text="@string/save"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/reset"
@@ -207,7 +208,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="reset"
-            android:text="@string/reset1" />
+            android:text="@string/reset1"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
     <TextView

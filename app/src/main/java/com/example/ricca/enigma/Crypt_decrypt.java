@@ -7,9 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Switch;
-import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.CompoundButton;
 
 public class Crypt_decrypt extends AppCompatActivity {
 
@@ -60,7 +58,7 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor.putString("original_text_key","");
         editor.putString("crypted_text2_key","");
         editor.putString("decrypted_text2_key","");
-        editor.commit();
+        editor.apply();
         i=0;
         Intent intent=new Intent(this,MainActivity.class);
         startActivity(intent);
@@ -72,7 +70,7 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor.putString("original_text_key","");
         editor.putString("crypted_text2_key","");
         editor.putString("decrypted_text2_key","");
-        editor.commit();
+        editor.apply();
         i=0;
         Intent intent=new Intent(this,Rotors.class);
         startActivity(intent);
@@ -84,7 +82,7 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor.putString("original_text_key","");
         editor.putString("crypted_text2_key","");
         editor.putString("decrypted_text2_key","");
-        editor.commit();
+        editor.apply();
         i=0;
         Intent intent=new Intent(this,Plugboard.class);
         startActivity(intent);
@@ -222,7 +220,7 @@ public class Crypt_decrypt extends AppCompatActivity {
                 Toast toast=Toast.makeText(getApplicationContext(),R.string.max_reached,Toast.LENGTH_SHORT);
                 toast.show();
             }
-            editor.commit();
+            editor.apply();
         }
         else
         {
@@ -245,7 +243,7 @@ public class Crypt_decrypt extends AppCompatActivity {
                 editor.putString("crypted_text2_key",String.format("%s%s",crypt_preferences.getString("crypted_text2_key",""), result));
 
             }
-            editor.commit();
+            editor.apply();
             Toast toast=Toast.makeText(getApplicationContext(),crypt_preferences.getString("crypted_text2_key",""),Toast.LENGTH_SHORT);
             toast.show();
         }
@@ -262,7 +260,7 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor.putInt("letter_two_key",0);
         editor.putInt("letter_three_key",0);
         editor.putInt("letter_four_key",0);
-        editor.commit();
+        editor.apply();
         Rotors.spinner1.setSelection(Rotors.enigma_preferences.getInt("rotor_one_key",0));
         Rotors.spinner2.setSelection(Rotors.enigma_preferences.getInt("rotor_two_key",0));
         Rotors.spinner3.setSelection(Rotors.enigma_preferences.getInt("rotor_three_key",0));
@@ -277,7 +275,7 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor2.putString("original_text_key","");
         editor2.putString("crypted_text2_key","");
         editor2.putString("decrypted_text2_key","");
-        editor2.commit();
+        editor2.apply();
         i=0;
         Toast toast=Toast.makeText(getApplicationContext(),R.string.reset_toast,Toast.LENGTH_SHORT);
         toast.show();
@@ -294,7 +292,7 @@ public class Crypt_decrypt extends AppCompatActivity {
             editor.putInt("crypted_text1_key",0);
             editor.putInt("decrypted_text1_key",4);
         }
-        editor.commit();
+        editor.apply();
         Intent intent=new Intent(this,toCrypt.class);
         startActivity(intent);
     }
