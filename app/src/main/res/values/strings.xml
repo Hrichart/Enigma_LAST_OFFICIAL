@@ -29,6 +29,9 @@
     <string name="view_text_btt">View texts</string>
     <string name="back">Back</string>
     <string name="copy">Text copied!</string>
+    <string name="plug1">First plug</string>
+    <string name="plug2">Second plug</string>
+
 
     <string name="A">A</string>
     <string name="B">B</string>

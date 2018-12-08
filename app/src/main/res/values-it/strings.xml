@@ -30,7 +30,8 @@
     <string name="view_text_btt">Visualizza testi</string>
     <string name="back">Indietro</string>
     <string name="copy">Testo copiato!</string>
-
+    <string name="plug1">Prima spina</string>
+    <string name="plug2">Seconda spina</string>
 
 
     <string name="A">A</string>

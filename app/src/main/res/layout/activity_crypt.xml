@@ -107,7 +107,8 @@
                 android:layout_marginTop="0dp"
                 android:background="@drawable/round_shape"
                 android:onClick="openEnigma"
-                tools:ignore="ButtonStyle" /> <!--Q-->
+                tools:ignore="ButtonStyle"
+                /> <!--Q-->
             <Button
                 android:id="@+id/bttW"
                 android:layout_width="@dimen/std"
