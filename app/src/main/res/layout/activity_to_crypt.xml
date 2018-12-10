@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/deutch_paper"
     tools:context=".toCrypt">
 
     <TextView
@@ -11,22 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="12dp"
-        android:text="@string/original_text"
         android:layout_alignParentLeft="true"
-        android:gravity="center_horizontal"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="46dp"
+        android:gravity="center_horizontal"
+        android:text="@string/original_text" />
 
     <TextView
         android:id="@+id/original_text_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="44dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp" />
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="68dp" />
 
     <TextView
         android:id="@+id/crypted_text_1"
