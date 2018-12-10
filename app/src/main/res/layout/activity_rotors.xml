@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Rotors"
-    android:background="@drawable/rotor_background">
-
+    android:background="@drawable/rotor_background2">
     <TextView
         android:id="@+id/rotor_selection_1"
         android:layout_width="wrap_content"
