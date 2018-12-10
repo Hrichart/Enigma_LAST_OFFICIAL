@@ -1,6 +1,7 @@
 package com.example.ricca.enigma;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -13,8 +14,8 @@ public class Plugboard extends AppCompatActivity {
 
     private RadioButton radio1;
     private RadioButton radio2;
-    private boolean r1=false;
-    private boolean r2=false;
+    private byte r1=0;
+    private byte r2=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,13 +23,14 @@ public class Plugboard extends AppCompatActivity {
         setContentView(R.layout.activity_plugboard);
         radio1=findViewById(R.id.radio_plug1);
         radio2=findViewById(R.id.radio_plug2);
+
     }
 
     public void openPlugssetting(View view){
         switch (view.getId()){
             case R.id.bttA2: //chiama funzione per cifrare
-                Plug_heart(1, view);
-            case R.id.bttB:
+                Plug_heart(1, view); break;
+            case R.id.bttB2:
                 Plug_heart(2, view); break;
             case R.id.bttC2:
                 Plug_heart(3, view); break;
@@ -85,38 +87,34 @@ public class Plugboard extends AppCompatActivity {
         Crypt_decrypt.crypt_preferences=getSharedPreferences(Crypt_decrypt.CRYPTPREFERENCES,Context.MODE_PRIVATE);
         SharedPreferences.Editor editor=Crypt_decrypt.crypt_preferences.edit();
         if(radio1.isChecked()){
-            if(!r1){
+            if(r1==0){
                 editor.putInt("first_pair1_key",index);
                 view.setBackgroundColor(Color.YELLOW);
-                r1=true;
-                Toast toast=Toast.makeText(getApplicationContext(),index,Toast.LENGTH_SHORT);
-                toast.show();
+                r1=1;
             }
-            else{
-                editor.putInt("second_pair1_key",index);
+            else if(r1==1 && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair1_key",0)){
+                editor.putInt("first_pair2_key",index);
                 view.setBackgroundColor(Color.YELLOW);
-                r1=false;
-                Toast toast=Toast.makeText(getApplicationContext(),index,Toast.LENGTH_SHORT);
-                toast.show();
+                r1=3;
             }
         }
         if(radio2.isChecked()){
-            if(!r2){
-                editor.putInt("first_pair2_key",index);
+            if(r2==0 && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair1_key",0) && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair2_key",0)){
+                editor.putInt("second_pair1_key",index);
                 view.setBackgroundColor(Color.RED);
-                r2=true;
-                Toast toast=Toast.makeText(getApplicationContext(),index,Toast.LENGTH_SHORT);
-                toast.show();
+                r2=1;
             }
-            else{
+            else if(r2==1 && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair1_key",0) && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair2_key",0) && index!=Crypt_decrypt.crypt_preferences.getInt("second_pair1_key",0)){
                 editor.putInt("second_pair2_key",index);
                 view.setBackgroundColor(Color.RED);
-                r1=false;
-                Toast toast=Toast.makeText(getApplicationContext(),index,Toast.LENGTH_SHORT);
-                toast.show();
+                r2=3;
             }
         }
         editor.apply();
     }
 
+    public void save(View view){
+        Intent intent=new Intent(this,Crypt_decrypt.class);
+        startActivity(intent);
+    }
 }

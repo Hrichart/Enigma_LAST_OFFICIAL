@@ -76,10 +76,6 @@ public class Crypt_decrypt extends AppCompatActivity {
         editor.putString("original_text_key","");
         editor.putString("crypted_text2_key","");
         editor.putString("decrypted_text2_key","");
-        editor.putInt("first_pair1_key",26);
-        editor.putInt("first_pair2_key",26);
-        editor.putInt("second_pair1_key",26);
-        editor.putInt("second_pair2_key",26);
         editor.apply();
         i=0;
         Intent intent=new Intent(this,Rotors.class);
@@ -174,13 +170,13 @@ public class Crypt_decrypt extends AppCompatActivity {
         if(offset3==27) offset3=1;
 
         if(index==crypt_preferences.getInt("first_pair1_key",0))
-            index=crypt_preferences.getInt("second_pair1_key",0);
-        else if(index==crypt_preferences.getInt("second_pair1_key",0))
+            index=crypt_preferences.getInt("first_pair2_key",0);
+        else if(index==crypt_preferences.getInt("first_pair2_key",0))
             index=crypt_preferences.getInt("first_pair1_key",0);
-        if(index==crypt_preferences.getInt("first_pair2_key",0))
+        if(index==crypt_preferences.getInt("second_pair1_key",0))
             index=crypt_preferences.getInt("second_pair2_key",0);
         else if(index==crypt_preferences.getInt("second_pair2_key",0))
-            index=crypt_preferences.getInt("first_pair2_key",0);
+            index=crypt_preferences.getInt("second_pair1_key",0);
 
         index=index+offset1;        //Incremento dell'indice dovuto alla rotazione rotore
         if(index>26) index=index-26; if(index<=0) index=index+26;       //controllo per mantenere l'indice all'interno del range di elementi del rotore
@@ -232,13 +228,13 @@ public class Crypt_decrypt extends AppCompatActivity {
         if(index>26) index=index-26; if(index<=0) index=index+26;
 
         if(index==crypt_preferences.getInt("first_pair1_key",0))
-            index=crypt_preferences.getInt("second_pair1_key",0);
-        else if(index==crypt_preferences.getInt("second_pair1_key",0))
+            index=crypt_preferences.getInt("first_pair2_key",0);
+        else if(index==crypt_preferences.getInt("first_pair2_key",0))
             index=crypt_preferences.getInt("first_pair1_key",0);
-        if(index==crypt_preferences.getInt("first_pair2_key",0))
+        if(index==crypt_preferences.getInt("second_pair1_key",0))
             index=crypt_preferences.getInt("second_pair2_key",0);
         else if(index==crypt_preferences.getInt("second_pair2_key",0))
-            index=crypt_preferences.getInt("first_pair2_key",0);
+            index=crypt_preferences.getInt("second_pair1_key",0);
 
         if(cr_decr_switch.isChecked())
         {
@@ -260,7 +256,7 @@ public class Crypt_decrypt extends AppCompatActivity {
         {
             crypt_preferences=getSharedPreferences(CRYPTPREFERENCES,Context.MODE_PRIVATE);
             SharedPreferences.Editor editor=crypt_preferences.edit();
-            if(i<100&&(i%4==0)&&i!=0){
+            if(i<100&&(i%5==0)&&i!=0){
                 result=String.valueOf(letters[index-1]);
                 i= (byte) (i+1);
                 editor.putString("original_text_key",String.format("%s%s",crypt_preferences.getString("original_text_key",""), String.valueOf(letters[starting-1])));
@@ -278,8 +274,6 @@ public class Crypt_decrypt extends AppCompatActivity {
 
             }
             editor.apply();
-            Toast toast=Toast.makeText(getApplicationContext(),crypt_preferences.getString("crypted_text2_key",""),Toast.LENGTH_SHORT);
-            toast.show();
         }
     }
     //Per resettare i rotori

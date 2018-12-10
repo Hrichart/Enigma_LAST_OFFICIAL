@@ -33,6 +33,7 @@ public class toCrypt extends AppCompatActivity {
         decrypted_text1.setVisibility(Crypt_decrypt.crypt_preferences.getInt("decrypted_text1_key",4));
         decrypted_text2.setVisibility(Crypt_decrypt.crypt_preferences.getInt("decrypted_text1_key",4));
         decrypted_text2.setText(Crypt_decrypt.crypt_preferences.getString("decrypted_text2_key",""));
+
     }
 
     public void openCrypt(View view)
