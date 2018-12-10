@@ -4,8 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rotors"
-    android:background="@drawable/rotor_background2">
+    android:background="@drawable/rotor_background2"
+    android:visibility="visible"
+    tools:context=".Rotors">
+
     <TextView
         android:id="@+id/rotor_selection_1"
         android:layout_width="wrap_content"
@@ -14,6 +16,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="0dp"
         android:text="@string/rotors_choose"
+        android:textStyle="bold"
         tools:textColor="@android:color/black" />
 
     <LinearLayout
@@ -31,15 +34,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/rotors_choose1"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <Spinner
             android:id="@+id/spinner1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="viewEnd"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textAlignment="viewEnd" />
     </LinearLayout>
     <!-- Per verificare che si sia selezionato il rotore in modo corretto -->
 
@@ -57,15 +61,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/rotors_choose2"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <Spinner
             android:id="@+id/spinner2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="viewEnd"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textAlignment="viewEnd" />
     </LinearLayout>
 
     <LinearLayout
@@ -82,15 +87,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/rotors_choose3"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <Spinner
             android:id="@+id/spinner3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="viewEnd"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textAlignment="viewEnd" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,15 +113,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/rotors_reflector"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <Spinner
             android:id="@+id/spinner4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="viewEnd"
-            android:gravity="end"/>
+            android:gravity="end"
+            android:textAlignment="viewEnd" />
     </LinearLayout>
 
     <TextView
@@ -125,7 +132,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="181dp"
         android:text="@string/start_selection"
-        tools:textColor="@android:color/black"/>
+        android:textStyle="bold"
+        tools:textColor="@android:color/black" />
 
     <LinearLayout
         android:layout_width="366dp"
@@ -141,7 +149,8 @@
             android:layout_weight="1"
             android:text="@string/third_letter"
             android:textAlignment="center"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -149,7 +158,8 @@
             android:layout_weight="1"
             android:text="@string/second_letter"
             android:textAlignment="center"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -157,7 +167,8 @@
             android:layout_weight="1"
             android:text="@string/first_letter"
             android:textAlignment="center"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
     </LinearLayout>
 
     <LinearLayout
@@ -173,24 +184,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="center">
-        </Spinner>
+            android:textAlignment="center"></Spinner>
 
         <Spinner
             android:id="@+id/letter_selector_2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:textAlignment="center">
-        </Spinner>
+            android:textAlignment="center"></Spinner>
 
         <Spinner
             android:id="@+id/letter_selector_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAlignment="center">
-        </Spinner>
+            android:textAlignment="center"></Spinner>
     </LinearLayout>
 
     <LinearLayout
@@ -208,8 +216,8 @@
             android:layout_weight="1"
             android:onClick="save"
             android:text="@string/save"
-            tools:textColor="@android:color/black"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            tools:textColor="@android:color/black" />
 
         <Button
             android:id="@+id/reset"
@@ -218,8 +226,8 @@
             android:layout_weight="1"
             android:onClick="reset"
             android:text="@string/reset1"
-            tools:textColor="@android:color/black"
-            tools:ignore="ButtonStyle" />
+            tools:ignore="ButtonStyle"
+            tools:textColor="@android:color/black" />
     </LinearLayout>
 
     <TextView
@@ -229,7 +237,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="263dp"
         android:text="@string/rotor_letter"
-        tools:textColor="@android:color/black"/>
+        android:textStyle="bold"
+        tools:textColor="@android:color/black" />
 
     <LinearLayout
         android:layout_width="333dp"
@@ -244,7 +253,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="2"
             android:text="@string/reflector_choose"
-            tools:textColor="@android:color/black"/>
+            android:textStyle="bold"
+            tools:textColor="@android:color/black" />
 
         <Spinner
             android:id="@+id/reflector_selection_4"
