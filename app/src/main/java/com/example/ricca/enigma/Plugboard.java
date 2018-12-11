@@ -89,24 +89,24 @@ public class Plugboard extends AppCompatActivity {
         if(radio1.isChecked()){
             if(r1==0){
                 editor.putInt("first_pair1_key",index);
-                view.setBackgroundColor(Color.YELLOW);
+                view.setBackgroundColor(Color.CYAN);
                 r1=1;
             }
             else if(r1==1 && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair1_key",0)){
                 editor.putInt("first_pair2_key",index);
-                view.setBackgroundColor(Color.YELLOW);
+                view.setBackgroundColor(Color.CYAN);
                 r1=3;
             }
         }
         if(radio2.isChecked()){
             if(r2==0 && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair1_key",0) && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair2_key",0)){
                 editor.putInt("second_pair1_key",index);
-                view.setBackgroundColor(Color.RED);
+                view.setBackgroundColor(Color.BLUE);
                 r2=1;
             }
             else if(r2==1 && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair1_key",0) && index!=Crypt_decrypt.crypt_preferences.getInt("first_pair2_key",0) && index!=Crypt_decrypt.crypt_preferences.getInt("second_pair1_key",0)){
                 editor.putInt("second_pair2_key",index);
-                view.setBackgroundColor(Color.RED);
+                view.setBackgroundColor(Color.BLUE);
                 r2=3;
             }
         }
@@ -114,6 +114,8 @@ public class Plugboard extends AppCompatActivity {
     }
 
     public void save(View view){
+        Toast toast=Toast.makeText(getApplicationContext(),R.string.save_toast,Toast.LENGTH_SHORT);
+        toast.show();
         Intent intent=new Intent(this,Crypt_decrypt.class);
         startActivity(intent);
     }

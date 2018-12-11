@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Enigma</string>
-    <string name="welcome">Welcome in Enigma Simulator</string>
+    <string name="welcome">Welcome in Enigma</string>
     <string name="text_off">Crypt</string>
     <string name="text_on">Decrypt</string>
     <string name="crypt">Start crypting or decrypting</string>

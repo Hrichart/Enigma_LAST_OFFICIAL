@@ -39,7 +39,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="22dp"
         android:layout_marginLeft="22dp"
-        android:layout_marginTop="43dp"
+        android:layout_marginTop="21dp"
         android:onClick="openRotors"
         android:text="@string/rotors" /> <!--bottone rotori-->
     <Button
@@ -49,9 +49,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="43dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginRight="22dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
         android:onClick="openHome"
         android:text="@string/home"
         tools:ignore="RelativeOverlap" /> <!--bottone home-->

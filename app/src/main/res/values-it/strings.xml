@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Enigma</string>
-    <string name="welcome">Benvenuto nel simulatore di Enigma</string>
+    <string name="welcome">Benvenuto su Enigma</string>
     <string name="crypt">Inizia a cifrare o decifrare</string>
     <string name="text_off">Cifra</string>
     <string name="text_on">Decifra</string>
