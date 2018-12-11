@@ -211,22 +211,24 @@
         <Button
             android:id="@+id/save"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_weight="1"
+            android:background="@drawable/button2"
             android:onClick="save"
             android:text="@string/save"
-            tools:ignore="ButtonStyle"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            tools:ignore="ButtonStyle" />
 
         <Button
             android:id="@+id/reset"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="32dp"
             android:layout_weight="1"
+            android:background="@drawable/button2"
             android:onClick="reset"
             android:text="@string/reset1"
-            tools:ignore="ButtonStyle"
-            android:textColor="@android:color/black" />
+            android:textColor="@android:color/black"
+            tools:ignore="ButtonStyle" />
     </LinearLayout>
 
     <TextView

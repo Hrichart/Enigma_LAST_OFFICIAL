@@ -16,44 +16,50 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="46dp"
+        android:layout_marginTop="67dp"
+        android:fontFamily="@font/special_elite"
         android:gravity="center_horizontal"
         android:text="@string/original_text" />
 
     <TextView
         android:id="@+id/original_text_2"
-        android:layout_width="match_parent"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="68dp" />
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="90dp"
+        android:fontFamily="@font/special_elite" />
 
     <TextView
         android:id="@+id/crypted_text_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="272dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="295dp"
+        android:fontFamily="@font/special_elite"
         android:gravity="center_horizontal"
         android:text="@string/crypted_text"
-        android:layout_alignParentLeft="true"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/crypted_text_2"
-        android:layout_width="match_parent"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="305dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp"
-        android:visibility="invisible"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="321dp"
+        android:fontFamily="@font/special_elite"
+        android:visibility="invisible" />
 
     <TextView
         android:id="@+id/decrypted_text_1"
@@ -64,45 +70,56 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginTop="273dp"
+        android:layout_marginTop="296dp"
+        android:fontFamily="@font/special_elite"
         android:gravity="center_horizontal"
         android:text="@string/decrypted_text"
         android:visibility="invisible" />
 
     <TextView
         android:id="@+id/decrypted_text_2"
-        android:layout_width="match_parent"
+        android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="305dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="0dp"
-        android:visibility="invisible"/>
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="23dp"
+        android:layout_marginLeft="23dp"
+        android:layout_marginTop="321dp"
+        android:fontFamily="@font/special_elite"
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/back_to_crypt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="511dp"
+        android:background="@android:drawable/ic_menu_revert"
+        android:onClick="openCrypt" />
+
+    <Button
+        android:id="@+id/send_to_app"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="507dp"
-        android:onClick="openCrypt"
-        android:text="@string/back" />
+        android:layout_marginStart="283dp"
+        android:layout_marginLeft="283dp"
+        android:layout_marginTop="511dp"
+        android:background="?attr/actionModeShareDrawable"
+        android:onClick="openSend" />
 
     <Button
-        android:layout_width="38dp"
-        android:layout_height="wrap_content"
+        android:layout_width="33dp"
+        android:layout_height="38dp"
         android:layout_alignTop="@+id/back_to_crypt"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="70dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginRight="165dp"
         android:background="?attr/actionModeCopyDrawable"
-        android:onClick="openCopy"/>
+        android:onClick="openCopy" />
 
 </RelativeLayout>

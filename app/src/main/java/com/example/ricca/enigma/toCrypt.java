@@ -55,4 +55,17 @@ public class toCrypt extends AppCompatActivity {
         Toast toast=Toast.makeText(getApplicationContext(),R.string.copy,Toast.LENGTH_SHORT);
         toast.show();
     }
+    public void openSend(View view){
+        String text;
+        Crypt_decrypt.crypt_preferences=getSharedPreferences(Crypt_decrypt.CRYPTPREFERENCES,Context.MODE_PRIVATE);
+        if(Crypt_decrypt.crypt_preferences.getInt("crypted_text1_key",0)==0)
+            text = Crypt_decrypt.crypt_preferences.getString("crypted_text2_key","");
+        else
+            text = Crypt_decrypt.crypt_preferences.getString("decrypted_text2_key","");
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+    }
 }

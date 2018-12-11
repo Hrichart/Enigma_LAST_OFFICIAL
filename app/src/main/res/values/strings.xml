@@ -27,7 +27,6 @@
     <string name="decrypted_text">The following is the decrypted text</string>
     <string name="original_text">The following is the typed text</string>
     <string name="view_text_btt">View texts</string>
-    <string name="back">Back</string>
     <string name="copy">Text copied!</string>
     <string name="plug1">First plug</string>
     <string name="plug2">Second plug</string>
